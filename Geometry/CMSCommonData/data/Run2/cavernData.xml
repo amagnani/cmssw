@@ -20,12 +20,12 @@
                 <Constant name="CMSWallIDY" value="1543*cm"/>
                 <Constant name="CMSWallIDZ" value="2656*cm"/> 
                 <Constant name="ShaftY" value="10000*cm"/> 
-                <Constant name="ShaftZ" value="150*cm"/> 
-                <Constant name="ShaftDZ" value="5100*cm"/>  <!--shaft height-->
-                <Constant name="ShaftPosZ" value="10000*cm-[cavernData:ShaftDZ]"/> 
+                <Constant name="ShaftZ" value="150*cm"/>  
+                <Constant name="ShaftDZ" value="(10000*cm-934*cm)*0.5"/>  <!--shaft height-->
+                <Constant name="ShaftPosY" value="10000*cm-[cavernData:ShaftDZ]"/> 
                 <Constant name="ShaftR" value="(2605*cm-166.5*cm)*0.5"/> 
                 <Constant name="ShaftAirR" value="(2405*cm-366.5*cm)*0.5"/> 
-                <Constant name="ShaftPosY" value="-2605*cm+[cavernData:ShaftR]"/> 
+                <Constant name="ShaftPosZ" value="-2605*cm+[cavernData:ShaftR]"/> 
                 <Constant name="CMSR3" value="2.69*m"/>
 		<Constant name="CMSR4" value="7.99*m"/>
 		<Constant name="HFRiseZ1" value="1395*cm"/>

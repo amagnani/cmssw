@@ -109,16 +109,19 @@
 		<Constant name="MERmin3" value="108.60*cm"/>
 	</ConstantsSection>
 	<SolidSection label="cms.xml">
-		<Polycone name="OCMS" startPhi="0*deg" deltaPhi="360*deg">
-			<ZSection z="-[CMSZ1]" rMin="[Rmin]" rMax="[CMSR2]"/>
-			<ZSection z="-[HallZ]" rMin="[Rmin]" rMax="[CMSR2]"/>
-			<ZSection z="-[HallZ]" rMin="[Rmin]" rMax="[ShaftY]"/>
-			<ZSection z="-[ShaftZ]" rMin="[Rmin]" rMax="[ShaftY]"/>
-			<ZSection z="-[ShaftZ]" rMin="[Rmin]" rMax="[HallRMax]"/>
-			<ZSection z="[HallZ]" rMin="[Rmin]" rMax="[HallRMax]"/>
-			<ZSection z="[HallZ]" rMin="[Rmin]" rMax="[CMSR2]"/>
-			<ZSection z="[CMSZ1]" rMin="[Rmin]" rMax="[CMSR2]"/>
-		</Polycone>
+		<Box name="OCMS1" dx="[CMSR2]" dy="[CMSR2]" dz="[CMSZ1]"/>
+		<Box name="OCMS2" dx="[cavernData:CMSWallEDX]" dy="[cavernData:CMSWallEDY]" dz="[cms:HallZ]"/>
+		<Box name="OCMS3" dx="[cavernData:ShaftR]" dy="[cavernData:ShaftDZ]" dz="[cavernData:ShaftR]"/>
+		<UnionSolid name="OCMSv1">
+		  <rSolid name="OCMS1"/>
+		  <rSolid name="OCMS2"/>
+		  <Translation x="0.*fm" y="0*fm" z="0*fm"/> 
+		</UnionSolid> 
+		<UnionSolid name="OCMS">
+		  <rSolid name="OCMSv1"/>
+		  <rSolid name="OCMS3"/>
+		  <Translation x="0.*fm" y="[cavernData:ShaftPosY]" z="[cavernData:ShaftPosZ]"/> 
+		</UnionSolid> 
 		<Polycone name="CMSE" startPhi="0*deg" deltaPhi="360*deg">
 			<ZSection z="-[CMSZ1]" rMin="[Rmin]" rMax="[CMSR2]"/>
 			<ZSection z="-[CMSZ2]" rMin="[Rmin]" rMax="[CMSR2]"/>
